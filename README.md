@@ -4,7 +4,7 @@ CS405 Project
 Authors
 =======
 
-Joel Lubrano
+Joel Lubrano,
 Grant Garrett
 
 Description
