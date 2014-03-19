@@ -12,6 +12,11 @@
         {
             echo "$row[0] <br />";
         }
+
+        echo "DBHOST: " . DB_HOST . "<br />";
+        echo "DBNAME: " . DB_NAME . "<br />";
+        echo "DBPASS: " . DB_PASS . "<br />";
+        echo "DBUSER: " . DB_USER . "<br />";
     ?>
 
     </body>
