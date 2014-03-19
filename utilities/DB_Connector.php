@@ -5,6 +5,12 @@
  * Date: 3/19/14
  */
 
+define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
+define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+
 class DB_Connector {
 
     private static $PDO;
@@ -97,10 +103,10 @@ class DB_Connector {
 
     private function __construct()
     {
-        self::$db_hostname = 'localhost';
-        self::$db_database = 'cs405';
-        self::$db_username = 'adminfkVGDpn';
-        self::$db_password = 'DAVyn1m_1cEF';
+        self::$db_hostname = DB_HOST;
+        self::$db_database = DB_NAME;
+        self::$db_username = DB_USER;
+        self::$db_password = DB_PASS;
         self::connectPDO();
     }
 
