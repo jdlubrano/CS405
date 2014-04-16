@@ -1,6 +1,6 @@
 body
 {
-
+    padding-top: 150px;
 }
 
 #headerWrapper
@@ -24,6 +24,7 @@ body
 #navbar
 {
     padding: 15px;
+    padding-bottom: 0;
     background: cadetblue;
     color: white;
     overflow: hidden;
