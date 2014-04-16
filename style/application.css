@@ -5,8 +5,12 @@ body
 
 #headerWrapper
 {
+    top: 0;
+    left: 0;
+    width: 100%;
     position: fixed;
 }
+
 .titleBanner
 {
     background: darkcyan;
@@ -22,16 +26,18 @@ body
     padding: 15px;
     background: cadetblue;
     color: white;
-
+    overflow: hidden;
 }
 
 #navbar #signInContainer
 {
-    /*float: left;*/
+    float: left;
+    display: inline-block;
 }
 
 #navbar #searchFormContainer
 {
     float: right;
+    display: inline-block;
 }
 
