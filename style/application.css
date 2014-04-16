@@ -15,6 +15,7 @@ body
 
 #navbar
 {
+    padding: 15px;
     background: cadetblue;
     color: white;
 }
@@ -24,7 +25,7 @@ body
     float: left;
 }
 
-#navbar #searchBar
+#navbar #searchForm
 {
     float: right;
 }
