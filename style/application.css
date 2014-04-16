@@ -6,13 +6,11 @@ body
 #headerWrapper
 {
     position: fixed;
-    width: 100%;
 }
 .titleBanner
 {
     background: darkcyan;
     color: mintcream;
-    width: 100%;
     padding: 25px;
     font-family: Arial, sans-serif;
     font-size: 36px;
