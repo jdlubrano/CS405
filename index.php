@@ -1,5 +1,7 @@
 <html>
-    <head></head>
+    <?php
+        include_once "layout/headerTags.html"
+    ?>
     <body>
 
     <?php
