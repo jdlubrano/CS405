@@ -1,10 +1,12 @@
 <html>
     <?php
-        include_once "layout/headerTags.html"
+        include_once "layout/headerTags.html";
     ?>
+
     <body>
 
     <?php
+        include_once "layout/navbar.html";
         echo "Hello World! <br />";
         require_once "utilities/DB_Connector.php";
         const TEST_QUERY = "SELECT message from test";

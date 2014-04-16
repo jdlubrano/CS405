@@ -1,4 +1,31 @@
 body
 {
-    background: blue;
+
 }
+
+.titleBanner
+{
+    background: darkcyan;
+    color: mintcream;
+    width: 100%;
+    padding: 25px;
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+}
+
+#navbar
+{
+    background: cadetblue;
+    color: white;
+}
+
+#navbar #signIn
+{
+    float: left;
+}
+
+#navbar #searchBar
+{
+    float: right;
+}
+
