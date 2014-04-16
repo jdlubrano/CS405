@@ -3,6 +3,11 @@ body
 
 }
 
+#headerWrapper
+{
+    position: fixed;
+    width: 100%;
+}
 .titleBanner
 {
     background: darkcyan;
@@ -11,6 +16,7 @@ body
     padding: 25px;
     font-family: Arial, sans-serif;
     font-size: 36px;
+    clear: both;
 }
 
 #navbar
@@ -18,14 +24,15 @@ body
     padding: 15px;
     background: cadetblue;
     color: white;
+
 }
 
-#navbar #signIn
+#navbar #signInContainer
 {
     float: left;
 }
 
-#navbar #searchForm
+#navbar #searchFormContainer
 {
     float: right;
 }
