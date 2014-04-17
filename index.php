@@ -1,12 +1,13 @@
 <html>
     <?php
-        include_once "layout/headerTags.html";
+        include_once "layout/headerTags.php";
     ?>
 
     <body>
 
     <?php
-        include_once "layout/navbar.html";
+        include_once "layout/navbar.php";
+        include_once "layout/sidebar.php";
         echo "Hello World! <br />";
         require_once "utilities/DB_Connector.php";
         const TEST_QUERY = "SELECT message from test";
@@ -18,6 +19,6 @@
         }
 
     ?>
-
+    <?php include_once "layout/footer.php"; ?>
     </body>
 </html>

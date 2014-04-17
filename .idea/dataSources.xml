@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1865346315">
+    <data-source source="LOCAL" name="Data Source" uuid="9cb2d3c1-052d-40bb-87a1-129cc1c7d6af">
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost/cs405</jdbc-url>
+      <user-name>jdlubrano</user-name>
+      <user-password>dfdadfdfdfd8dfdadfc6dfcfdf98df99</user-password>
+      <libraries>
+        <library>
+          <url>file://$PROJECT_DIR$/mysql-connector-java-5.1.26-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+

@@ -1,6 +1,11 @@
 body
 {
-    padding-top: 150px;
+    font-size: 24px;
+    color: mintcream;
+    padding-top: 200px;
+    padding-left: 200px;
+    background: black;
+    background-size: 100%;
 }
 
 #headerWrapper
@@ -11,34 +16,109 @@ body
     position: fixed;
 }
 
+#footerWrapper
+{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+}
+
+#footer
+{
+    padding: 20px;
+    overflow: hidden;
+    background-size: 100%;
+}
+
 .titleBanner
 {
-    background: darkcyan;
     color: mintcream;
     padding: 25px;
     font-family: Arial, sans-serif;
     font-size: 36px;
     clear: both;
+    background-size: 100%;
 }
 
 #navbar
 {
     padding: 15px;
     padding-bottom: 0;
-    background: cadetblue;
     color: white;
     overflow: hidden;
+    background-size: 100%;
 }
 
-#navbar #signInContainer
+#navbar #signInContainer, #footer #staffPortalContainer
 {
     float: left;
     display: inline-block;
 }
 
-#navbar #searchFormContainer
+#navbar #searchFormContainer, #footer #contactUsContainer
 {
     float: right;
     display: inline-block;
 }
 
+#sidebar
+{
+    left: 0;
+    top: 172px;
+    float: left;
+    position: fixed;
+    overflow: hidden;
+    clear: both;
+    height: 100%;
+}
+
+a
+{
+    font-size: 24px;
+    color: honeydew;
+}
+
+button
+{
+    padding: 15px;
+    margin: 5px;
+    font-size: 24px;
+}
+
+input
+{
+    margin: 5px;
+    font-size: 24px;
+}
+
+input[type="checkbox"]
+{
+    -webkit-transform: scale(2,2);
+    transform: scale(2,2);
+}
+
+a:hover
+{
+    color: white;
+}
+
+#sidebar ul
+{
+    padding: 0;
+    margin: 0;
+}
+#sidebar li
+{
+    padding: 20px;
+    font-size: 24px;
+    color: mintcream;
+    list-style-type: none;
+}
+
+div.alert
+{
+    padding: 5px;
+    background: red;
+    text-align: center;
+}
