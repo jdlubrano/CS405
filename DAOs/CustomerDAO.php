@@ -5,8 +5,11 @@
  * Date: 4/16/14
  * Time: 11:39 PM
  */
-
-require_once "../utilities/DB_Connector.php";
+if(!class_exists("DB_Connector"))
+{
+    require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR .
+                        "utilities" . DIRECTORY_SEPARATOR . "DB_Connector.php");
+}
 
 class CustomerDAO {
 
@@ -14,7 +17,9 @@ class CustomerDAO {
 
     const CREATE_CUSTOMER = "INSERT INTO Customers(email, password, name, address, VIP) VALUES (?,?,?,?,?)";
 
-    function  __construct(){}
+    const GET_CUSTOMER_BY_EMAIL = "SELECT * FROM Customers WHERE email = ?";
+
+    public function  __construct(){}
 
     /**
      * Checks email and password combination against the database.
@@ -22,7 +27,7 @@ class CustomerDAO {
      * @param $password
      * @return true if customer is found
      */
-    function authenticateUser($email, $password)
+    public function authenticateUser($email, $password)
     {
         $result = DB_Connector::getInstance()->executePreparedQuery(self::AUTHENTICATE_USER, [$email, $password]);
         if($result->rowCount())
@@ -34,7 +39,7 @@ class CustomerDAO {
     /**
      * Creates user with parameters in argument array.
      */
-    function createCustomer($customerArray)
+    public function createCustomer($customerArray)
     {
         $email = $customerArray['email'];
         $password = $customerArray['password'];
@@ -50,5 +55,16 @@ class CustomerDAO {
             return true;
         else
             return false;
+    }
+
+    /**
+     * Retrieves customer with email specified by parameter.
+     * @param $email
+     * @return PDOStatement
+     */
+    public function getCustomerByEmail($email)
+    {
+        $result = DB_Connector::getInstance()->executePreparedQuery(self::GET_CUSTOMER_BY_EMAIL, array($email));
+        return $result;
     }
 } 

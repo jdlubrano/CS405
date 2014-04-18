@@ -15,7 +15,6 @@ if(!isset($_POST['customerEmail']) || !isset($_POST['customerPassword']))
 $email = $_POST['customerEmail'];
 $password = $_POST['customerPassword'];
 require_once "../DAOs/CustomerDAO.php";
-$loc = '';
 session_start();
 $_SESSION['FAILED_LOGIN'] = false;
 
@@ -25,6 +24,7 @@ $authenticated = $customerDAO->authenticateUser($email, $password);
 
 if($authenticated)
 {
+    $_SESSION = array();
     $_SESSION['current_customer_email'] = $email;
     $_SESSION['current_customer_password'] = $password;
     header("Location: ../index.php");

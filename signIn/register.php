@@ -1,6 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
+ * Displays form for customer to register.
  * User: Joel
  * Date: 4/16/14
  * Time: 11:58 PM
