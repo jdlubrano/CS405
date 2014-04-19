@@ -18,6 +18,7 @@ $(function() {
         $.ajax({
             method: "GET",
             url: $(this).attr("url"),
+            dataType: "html",
             success: function() {
                 location.reload();
             },
