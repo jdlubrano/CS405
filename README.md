@@ -17,17 +17,18 @@ Website for CS405 Project
 Files
 =====
 
-* index.php
-    * ->Application Home Page
-
-* signOut.php
-    * ->Signs out staff and customers alike.  Begins a new HTTP Session.
-
-* config
-    * config.php
-        * ->Contains definitions of global variables for the application.
-
-* contact
+* Project Root
     * index.php
-        * ->Static html contact us page.
+        * Application Home Page
+
+    * signOut.php
+        * Signs out staff and customers alike.  Begins a new HTTP Session.
+
+    * config
+        * config.php
+            * Contains definitions of global variables for the application.
+
+    * contact
+        * index.php
+            * Static html contact us page.
 
