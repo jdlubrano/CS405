@@ -23,7 +23,8 @@ $(function() {
                 location.reload();
             },
             error: function(msg) {
-                alert("Failed to add item to cart: " + msg);
+                alert("Failed to add item to cart: " + JSON.stringify(msg));
+                console.log(msg);
             }
         });
     });
