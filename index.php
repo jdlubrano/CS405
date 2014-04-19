@@ -10,7 +10,7 @@
         include_once "layout/sidebar.php";
         echo "Hello World! <br />";
         require_once "utilities/DB_Connector.php";
-        const TEST_QUERY = "SELECT message from test";
+        const TEST_QUERY = "SELECT message from Test";
 
         $result = DB_Connector::getInstance()->executeSimpleQuery(TEST_QUERY);
         while($row = $result->fetch())

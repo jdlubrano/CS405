@@ -33,7 +33,7 @@ if(!(is_numeric($price) && is_numeric($quantity)))
 
 $quantity = intval($quantity);
 
-const CREATE_ITEM = "INSERT INTO items(name, description, price, quantity) VALUES (?,?,?,?)";
+const CREATE_ITEM = "INSERT INTO Items(name, description, price, quantity) VALUES (?,?,?,?)";
 
 if(!class_exists('DB_Connector'))
     require '../utilities/DB_Connector.php';

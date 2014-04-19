@@ -18,7 +18,7 @@
     $itemId = $_GET['item_id'];
     $return = $_GET['return'];
 
-    const ADD_ITEM_TO_CART = "INSERT INTO carts(email, item_id) VALUES(?,?)";
+    const ADD_ITEM_TO_CART = "INSERT INTO Carts(email, item_id) VALUES(?,?)";
 
     $result = DB_Connector::getInstance()->executePreparedQuery(ADD_ITEM_TO_CART,
                                                                 array($_SESSION['current_customer_email'],
