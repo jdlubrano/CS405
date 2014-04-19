@@ -37,11 +37,11 @@ $(function() {
             data: 'item_id='+itemId+'&quantity='+quantity,
             dataType: "html",
             success: function(msg) {
-                alert(msg);
+                alert("Successfully Updated Inventory!");
                 location.reload();
             },
             error: function(msg) {
-                alert(msg);
+                alert(JSON.stringify(msg));
             }
         })
     });
@@ -57,7 +57,7 @@ $(function() {
                 location.reload();
             },
             error: function(msg) {
-                alert(msg);
+                alert(JSON.stringify(msg));
             }
         })
     });
@@ -68,7 +68,7 @@ $(function() {
             url: 'createPromotion.php',
             data: form,
             success: function(msg) {
-                alert(msg);
+                alert("Successfully started promotion.");
                 location.href = "viewPromotionHistory.php"
             },
             error: function(msg) {
@@ -87,7 +87,7 @@ $(function() {
                 location.reload();
             },
             error: function(msg) {
-                alert(msg);
+                alert(JSON.stringify(msg));
             }
         })
     })
