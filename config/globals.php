@@ -6,7 +6,10 @@
  * Time: 10:01 PM
  */
 
-define("APPLICATION_ROOT", "cs405");
+if($_SERVER['SERVER_NAME'] == 'localhost')
+    define("APPLICATION_ROOT", "cs405");
+else
+    define("APPLICATION_ROOT", "");
 define("VIEW_ONLY", 0);
 define("ADD_TO_CART", 1);
 define("UPDATE_INVENTORY", 2);
