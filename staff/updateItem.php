@@ -21,6 +21,11 @@
         require "../DAOs/ItemsDAO.php";
 
     $itemsDAO = new ItemsDAO();
+    if($_GET['quantity'] < 0)
+    {
+        header('HTTP/1.1 500 Internal Server Error');
+        die("Quantity must be a positive integer.");
+    }
     $result = $itemsDAO->updateQuantity($_GET['item_id'], $_GET['quantity']);
     $err = $result->errorInfo();
     if($err[2] != '')

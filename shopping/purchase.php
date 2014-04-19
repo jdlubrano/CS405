@@ -32,6 +32,12 @@ $result = DB_Connector::getInstance()->executePreparedQuery(CREATE_NEW_ORDER, ar
 const GET_ITEMS_FROM_CART_BY_EMAIL = "SELECT * FROM Carts WHERE email = ?";
 $result = DB_Connector::getInstance()->executePreparedQuery(GET_ITEMS_FROM_CART_BY_EMAIL,
                                                             array($_SESSION['current_customer_email']));
+if($result->rowCount() < 1)
+{
+    header('HTTP/1.1 200 OK');
+    header("Location: viewCart.php");
+    die(0);
+}
 
 //store Items with order_id in item_orders
 const INSERT_CART_ITEMS_INTO_ITEM_ORDERS = "INSERT INTO Item_orders(order_id, item_id) VALUES (?,?)";
