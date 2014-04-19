@@ -6,9 +6,9 @@
     ini_set("precision", 2);
 ?>
 <div id="headerWrapper">
-    <div id="navbar" style="background-image:url(/<?php echo APPLICATION_ROOT ?>/images/bannerBackground.png)">
+    <div id="navbar" style="background-image:url(<?php echo APPLICATION_ROOT ?>/images/bannerBackground.png)">
         <div class="navbar-left" id="signInContainer">
-            <a href="/<?php echo APPLICATION_ROOT ?>/signIn" id="signInLink">Sign In/Register</a>
+            <a href="<?php echo APPLICATION_ROOT ?>/signIn" id="signInLink">Sign In/Register</a>
         </div>
         <div class="navbar-left" id="myAccountContainer">
             <?php displayMyOrdersLink(); ?>
@@ -23,14 +23,14 @@
             <?php displayCurrentUser(); ?>
         </div>
         <div id="searchFormContainer">
-            <form id="searchForm" method="get" action="/<?php echo APPLICATION_ROOT ?>/shopping/search.php">
+            <form id="searchForm" method="get" action="<?php echo APPLICATION_ROOT ?>/shopping/search.php">
                 <label for="searchBar">Search Store: </label>
                 <input type="text" name="keyword" id="searchBar" />
             </form>
         </div>
     </div>
     <div class="titleBanner">
-        <a href="/<?php echo APPLICATION_ROOT ?>">RetroniX</a>
+        <a href="<?php echo APPLICATION_ROOT ?>">RetroniX</a>
         <span id="slogan">"We sell stuff, you buy stuff."</span>
     </div>
 </div>
@@ -41,7 +41,7 @@
     {
         if(isset($_SESSION['current_customer_email']))
         {
-            echo "<a href=/" . APPLICATION_ROOT . "/shopping/myOrders.php >My Orders</a>";
+            echo "<a href=" . APPLICATION_ROOT . "/shopping/myOrders.php >My Orders</a>";
         }
     }
 
@@ -49,7 +49,7 @@
     {
         if(isset($_SESSION['current_customer_email']))
         {
-            echo "<a href=/" . APPLICATION_ROOT . "/shopping/viewCart.php".">My Cart</a>";
+            echo "<a href=" . APPLICATION_ROOT . "/shopping/viewCart.php".">My Cart</a>";
         }
     }
 
@@ -58,7 +58,7 @@
         if(isset($_SESSION['current_customer_email']) ||
             isset($_SESSION['current_staff_id']))
         {
-            echo "<a href=/" . APPLICATION_ROOT . "/signOut.php>Sign Out</a>";
+            echo "<a href=" . APPLICATION_ROOT . "/signOut.php>Sign Out</a>";
         }
     }
 

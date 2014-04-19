@@ -7,7 +7,7 @@
  */
 
 if($_SERVER['SERVER_NAME'] == 'localhost')
-    define("APPLICATION_ROOT", "cs405");
+    define("APPLICATION_ROOT", "/cs405");
 else
     define("APPLICATION_ROOT", "");
 define("VIEW_ONLY", 0);

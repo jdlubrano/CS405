@@ -5,11 +5,11 @@
  * Date: 4/16/14
  * Time: 10:16 PM
  */
-    $shoppingIndex = "/" . APPLICATION_ROOT . "/shopping";
+    $shoppingIndex = APPLICATION_ROOT . "/shopping";
 
     function genHref($paramVal)
     {
-        $shoppingIndex = "/" . APPLICATION_ROOT . "/shopping";
+        $shoppingIndex = APPLICATION_ROOT . "/shopping";
         echo $shoppingIndex . "/search.php?keyword=" . $paramVal;
     }
 ?>
@@ -31,7 +31,7 @@
 
                 if($staffDAO->authenticateStaff($_SESSION['current_staff_id'], $_SESSION['current_staff_password']))
                 {
-                    $staffHomeURI = "/" . APPLICATION_ROOT . "/staff/";
+                    $staffHomeURI = APPLICATION_ROOT . "/staff/";
                     echo "<li><a href=\"$staffHomeURI\">Staff Home</a></li>";
                 }
             }
