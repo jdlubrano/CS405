@@ -44,12 +44,6 @@
                         "DAOs" . DIRECTORY_SEPARATOR . "CustomerDAO.php");
                 }
                 $customerDAO = new CustomerDAO();
-
-                if($customerDAO->authenticateUser($_SESSION['current_customer_email'],
-                                                  $_SESSION['current_customer_password']))
-                {
-                    echo "<li><a href=\"#\">VIPs Only</a></li>";
-                }
             }
         ?>
     </ul>

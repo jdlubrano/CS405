@@ -177,3 +177,8 @@ hr
     font-size: 22px;
     font-style: italic;
 }
+
+img
+{
+    background: black;
+}
