@@ -27,7 +27,8 @@
         die();
     else
     {
+        $e = $result->errorInfo();
         header("HTTP/1.1 500 Internal Server Error");
-        die(print_r($result->errorInfo()));
+        die($e[2]);
     }
 ?>
