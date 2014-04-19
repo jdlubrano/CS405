@@ -26,5 +26,8 @@
     if($result->rowCount())
         die();
     else
+    {
+        header("HTTP/1.1 500 Internal Server Error");
         die(print_r($result->errorInfo()));
+    }
 ?>

@@ -61,9 +61,10 @@ CREATE TABLE Buy(item_id INTEGER NOT NULL AUTO_INCREMENT,
 					FOREIGN KEY (item_id) REFERENCES VIP_Items(item_id),
 					FOREIGN KEY (email) REFERENCES Customers(email));
 					
-CREATE TABLE Carts(email VARCHAR(30) NOT NULL,
-					item_id INTEGER NOT NULL AUTO_INCREMENT,
-					PRIMARY KEY (email, item_id),
+CREATE TABLE Carts(cart_id INTEGER NOT NULL AUTO_INCREMENT,
+          email VARCHAR(30) NOT NULL,
+					item_id INTEGER NOT NULL,
+					PRIMARY KEY (cart_id),
 					FOREIGN KEY (email) REFERENCES Customers(email),
 					FOREIGN KEY (item_id) REFERENCES Items(item_id));
 					
@@ -76,9 +77,10 @@ CREATE TABLE Orders(order_id INTEGER NOT NULL AUTO_INCREMENT,
 								FROM Staff 
 								WHERE Orders.status = Staff.staff_id)));
 					
-CREATE TABLE Item_orders(order_id INTEGER NOT NULL,
+CREATE TABLE Item_orders(id INTEGER NOT NULL AUTO_INCREMENT,
+              order_id INTEGER NOT NULL,
 							item_id INTEGER NOT NULL,
-							PRIMARY KEY (order_id, item_id),
+							PRIMARY KEY (id),
 							FOREIGN KEY (order_id) REFERENCES Orders(order_id),
 							FOREIGN KEY (item_id) REFERENCES Items(item_id));
 					
