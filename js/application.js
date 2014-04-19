@@ -21,8 +21,8 @@ $(function() {
             success: function() {
                 location.reload();
             },
-            error: function() {
-                alert("Failed to add item to cart.");
+            error: function(msg) {
+                alert("Failed to add item to cart: " + msg);
             }
         });
     });
