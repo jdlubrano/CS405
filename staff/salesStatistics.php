@@ -25,7 +25,7 @@
             else
                 $period = WEEKLY;
             $query = "SELECT IO.item_id, COUNT(IO.item_id) as cnt, I.name
-                      FROM Items I, Item_Orders IO, Orders O
+                      FROM Items I, Item_orders IO, Orders O
                       WHERE I.item_id = IO.item_id AND O.order_id = IO.order_id AND
                       O.order_date BETWEEN NOW() -  INTERVAL 1 ";
             echo "<h2>Sales Statistics";
