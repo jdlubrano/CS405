@@ -28,6 +28,14 @@ class StaffDAO {
             return false;
     }
 
+    public function authenticateManager($id, $password)
+    {
+        $result = DB_Connector::getInstance()->executePreparedQuery(self::AUTHENTICATE_STAFF,
+                                                                    array($id, $password));
+        $row = $result->fetch();
+        return $row['manager'];
+    }
+
     public function createStaff($staffArray)
     {
 

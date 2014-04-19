@@ -1,7 +1,9 @@
 <?php
     require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR .
                 "config" . DIRECTORY_SEPARATOR . "globals.php");
-    session_start();
+    if(session_status() == PHP_SESSION_NONE)
+        session_start();
+    ini_set("precision", 2);
 ?>
 <div id="headerWrapper">
     <div id="navbar" style="background-image:url(/<?php echo APPLICATION_ROOT ?>/images/bannerBackground.png)">

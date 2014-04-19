@@ -95,6 +95,11 @@ button
     font-size: 24px;
 }
 
+.updateInvButton, .shipOrderButton, .stopPromoBtn
+{
+    font-size: 18px;
+}
+
 input
 {
     margin: 5px;
@@ -135,6 +140,7 @@ div.alert
 table
 {
     margin: 10px;
+    clear: both;
 }
 
 table a
@@ -146,4 +152,21 @@ th, td
 {
     font-size: 20px;
     padding: 10px;
+    text-align: center;
+}
+
+hr
+{
+    color: mintcream;
+}
+
+#promoTable th
+{
+    border-bottom: 2px solid mintcream;
+}
+
+#promoTable td.bordered
+{
+    border-bottom: 2px solid mintcream;
+    text-align: left;
 }

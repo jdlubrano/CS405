@@ -20,8 +20,20 @@
             {
                 $msg = "Sign in failed. You have entered invalid credentials.";
                 echo "<div class=\"alert\">$msg</div><br />";
+                unset($_SESSION['FAILED_LOGIN']);
             }
-            $_SESSION['FAILED_LOGIN'] = false;
+            if(isset($_SESSION['NEEDS_TO_SIGN_IN']))
+            {
+                $msg = "Please Sign-In.";
+                echo "<div class=alert>$msg</div><br />";
+                unset($_SESSION['NEEDS_TO_SIGN_IN']);
+            }
+            if(isset($_SESSION['NEEDS_TO_BE_MANAGER']))
+            {
+                $msg = "You need to sign in as a manager.";
+                echo "<div class=alert>$msg</div>";
+                unset($_SESSION['NEEDS_TO_BE_MANAGER']);
+            }
         ?>
         <div id="signInBox">
             <form method="post" action="signInStaff.php">

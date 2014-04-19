@@ -34,7 +34,7 @@ $result = DB_Connector::getInstance()->executePreparedQuery(GET_ITEMS_FROM_CART_
                                                             array($_SESSION['current_customer_email']));
 
 //store Items with order_id in item_orders
-const INSERT_CART_ITEMS_INTO_ITEM_ORDERS = "INSERT INTO Item_Orders VALUES (?,?)";
+const INSERT_CART_ITEMS_INTO_ITEM_ORDERS = "INSERT INTO Item_Orders(order_id, item_id) VALUES (?,?)";
 const SUBTRACT_QUANTITY = "UPDATE Items SET quantity = (quantity-1) WHERE item_id = ?";
 while($row = $result->fetch())
 {

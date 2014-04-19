@@ -37,7 +37,10 @@
             $orderIds = $result->fetchAll(PDO::FETCH_COLUMN, 0);
 
             foreach($orderIds as $order)
-                displayOrderInTables($order);
+            {
+                displayOrderInTable($order, false);
+                echo "<hr />";
+            }
         ?>
     </body>
 </html>

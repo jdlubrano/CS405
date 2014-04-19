@@ -23,7 +23,12 @@
                 $itemsDAO = new ItemsDAO();
                 $result = $itemsDAO->getAllItemsForSale();
                 $returnURI = $_SERVER['SERVER_NAME'] .":". $_SERVER['SERVER_PORT'] . $_SERVER['REQUEST_URI'];
-                displayItemsWithAddToCart($result, $returnURI);
+                if(isset($_SESSION['current_customer_email']))
+                    displayItems($result, $returnURI, ADD_TO_CART);
+                elseif(isset($_SESSION['current_staff_id']) && isset($UPDATE_FLAG))
+                    displayItems($result, $returnURI, UPDATE_INVENTORY);
+                else
+                    displayItems($result, $returnURI, VIEW_ONLY);
             ?>
         <?php include_once("../layout/footer.php"); ?>
     </body>

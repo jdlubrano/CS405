@@ -21,7 +21,7 @@ function getCountOfItemInCart($itemId, $email)
 /**
  * @param $PDOStatement PDOStatement
  */
-function displayItemsWithAddToCart($PDOStatement, $returnURI)
+function displayItems($PDOStatement, $returnURI, $USE_FLAG)
 {
     echo "<table>
             <thead>
@@ -41,15 +41,24 @@ function displayItemsWithAddToCart($PDOStatement, $returnURI)
                 $description = $row['description'];
                 $price = $row['price'];
                 $quantity = $row['quantity'];
-                $quantity -= getCountOfItemInCart($row['item_id'], $_SESSION['current_customer_email']);
+                // Subtract items in customer's cart.
+                if(isset($_SESSION['current_customer_email']) && $USE_FLAG == ADD_TO_CART)
+                    $quantity -= getCountOfItemInCart($row['item_id'], $_SESSION['current_customer_email']);
                 $addToCartStr = "addToCart.php?item_id=" . $row["item_id"];
                 $addToCartStr .= "&return=$returnURI";
                 echo "<tr>";
                 echo "<td>$name</td>";
                 echo "<td>$description</td>";
-                echo "<td>$price</td>";
-                echo "<td>$quantity</td>";
-                if(isset($_SESSION['current_customer_email']) && $quantity > 0)
+                printf("<td>%01.2f</td>", $price);
+                if(isset($_SESSION['current_staff_id']) && $USE_FLAG == UPDATE_INVENTORY)
+                {
+                    $itemId = $row['item_id'];
+                    echo "<td><input type=text id=quantityInput$itemId name=quantity$itemId value=$quantity /></td>";
+                    echo "<td><button class=updateInvButton type=button id=updateInvButton$itemId item=$itemId>Update Inventory</button></td>";
+
+                }else
+                    echo "<td style=text-align:center;>$quantity</td>";
+                if(isset($_SESSION['current_customer_email']) && $quantity > 0 && $USE_FLAG == ADD_TO_CART)
                     echo "<td><a class=\"addToCartLink\" href=\"#\" url=\"$addToCartStr\">Add to Cart</a></td>";
                 echo "</tr>";
             }
