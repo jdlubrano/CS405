@@ -23,7 +23,7 @@
             <?php displayCurrentUser(); ?>
         </div>
         <div id="searchFormContainer">
-            <form id="searchForm" method="get" action="/<?php echo APPLICATION_ROOT ?>/shopping/keywordSearch">
+            <form id="searchForm" method="get" action="/<?php echo APPLICATION_ROOT ?>/shopping/search.php">
                 <label for="searchBar">Search Store: </label>
                 <input type="text" name="keyword" id="searchBar" />
             </form>
@@ -31,6 +31,7 @@
     </div>
     <div class="titleBanner">
         <a href="/<?php echo APPLICATION_ROOT ?>">RetroniX</a>
+        <span id="slogan">"We sell stuff, you buy stuff."</span>
     </div>
 </div>
 

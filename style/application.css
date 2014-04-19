@@ -170,3 +170,10 @@ hr
     border-bottom: 2px solid mintcream;
     text-align: left;
 }
+
+#slogan
+{
+    float: right;
+    font-size: 22px;
+    font-style: italic;
+}

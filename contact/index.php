@@ -25,11 +25,11 @@
 
         <h4>Special Thanks To:</h4>
         <ul>
-            <li>Kyle Koller</li>
-            <li>Larry Williamson II</li>
-            <li>Ben Wolfe</li>
-            <li>Ben Pio</li>
-            <li>Ol' Bob Meier</li>
+            <li>Ben Wolfe -- Slogan Author</li>
+            <li>Kyle Koller -- Let's Go Cats!</li>
+            <li>Larry Williamson II -- NCurses Support</li>
+            <li>Ben Pio -- Just Because</li>
+            <li>Ol' Bob Meier -- An Inspiration To Us All</li>
         </ul>
     </body>
 </html>

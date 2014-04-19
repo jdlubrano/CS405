@@ -6,14 +6,19 @@
  * Time: 10:16 PM
  */
     $shoppingIndex = "/" . APPLICATION_ROOT . "/shopping";
+
+    function genHref($paramVal)
+    {
+        $shoppingIndex = "/" . APPLICATION_ROOT . "/shopping";
+        echo $shoppingIndex . "/search.php?keyword=" . $paramVal;
+    }
 ?>
 <div id="sidebar">
     <ul>
         <li><a href="<?php echo $shoppingIndex; ?>">All Items</a></li>
-        <li><a href="#">Consoles</a></li>
-        <li><a href="#">Games</a></li>
-        <li><a href="#">Music</a></li>
-        <li><a href="#">Accessories</a></li>
+        <li><a href="<?php genHref(CONSOLE_SEARCH); ?>">Consoles</a></li>
+        <li><a href="<?php genHref(GAMES_SEARCH); ?>">Games</a></li>
+        <li><a href="<?php genHref(MUSIC_SEARCH); ?>">Music</a></li>
         <?php
             if(isset($_SESSION['current_staff_id']) && isset($_SESSION['current_staff_password']))
             {

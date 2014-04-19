@@ -6,7 +6,6 @@
  * Time: 10:27 PM
  */
 
-
 const GET_COUNT_OF_ITEM_IN_CART = "SELECT COUNT(*) as cnt FROM Carts WHERE item_id = ? AND email = ?";
 
 function getCountOfItemInCart($itemId, $email)
@@ -53,7 +52,9 @@ function displayItems($PDOStatement, $returnURI, $USE_FLAG)
                 if(isset($_SESSION['current_staff_id']) && $USE_FLAG == UPDATE_INVENTORY)
                 {
                     $itemId = $row['item_id'];
-                    echo "<td><input type=text id=quantityInput$itemId name=quantity$itemId value=$quantity /></td>";
+                    echo "<td><input type=text size=5
+                                     id=quantityInput$itemId name=quantity$itemId
+                                     value=$quantity /></td>";
                     echo "<td><button class=updateInvButton type=button id=updateInvButton$itemId item=$itemId>Update Inventory</button></td>";
 
                 }else
@@ -90,7 +91,7 @@ function displayItemsInCart($email, $returnURI)
         echo "<tr>";
         echo "<td>$name</td>";
         echo "<td>$description</td>";
-        echo "<td>$price</td>";
+        printf ("<td>%01.2f</td>", $price);
         echo "<td><a class=\"removeFromCartLink\" href=\"#\" url=\"$removeFromCartStr\">Remove from Cart</a></td>";
         echo "</tr>";
     }
