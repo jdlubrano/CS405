@@ -3,7 +3,6 @@
                 "config" . DIRECTORY_SEPARATOR . "globals.php");
     if(session_status() == PHP_SESSION_NONE)
         session_start();
-    ini_set("precision", 2);
 ?>
 <div id="headerWrapper">
     <div id="navbar" style="background-image:url(<?php echo APPLICATION_ROOT ?>/images/bannerBackground.png)">
@@ -30,7 +29,7 @@
         </div>
     </div>
     <div class="titleBanner">
-        <a href="<?php echo APPLICATION_ROOT ?>">RetroniX</a>
+        <a href="<?php echo APPLICATION_ROOT ?>/index.php">RetroniX</a>
         <span id="slogan">"We sell stuff, you buy stuff."</span>
     </div>
 </div>
