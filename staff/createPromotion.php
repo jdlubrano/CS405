@@ -26,10 +26,10 @@
 
     $items = $_POST['items'];
     $discount = $_POST['discount'];
-    if(!is_numeric($discount) || $discount <= 0)
+    if(!is_numeric($discount) || $discount <= 0 || $discount > 100)
     {
         header("HTTP/1.1 500 Internal Server Error");
-        die("Valid discounts must be numbers greater than zero.");
+        die("Valid discounts must be numbers between zero and 100.");
     }
 
     $discount = $discount/100;
