@@ -72,7 +72,7 @@ $(function() {
                 location.href = "viewPromotionHistory.php"
             },
             error: function(msg) {
-                alert(msg);
+                alert(JSON.stringify(msg));
             }
         })
     });
