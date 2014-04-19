@@ -13,11 +13,20 @@ if(!class_exists("DB_Connector"))
 
 class StaffDAO {
 
+    const GET_ALL_STAFF = 'SELECT * FROM Staff';
+
     const AUTHENTICATE_STAFF = "SELECT * FROM Staff WHERE staff_id = ? AND password = ?";
 
     const GET_STAFF_BY_ID = "SELECT * FROM Staff WHERE staff_id = ?";
 
+    const CREATE_STAFF = "INSERT INTO Staff(name, password, manager) VALUES (?,?,?)";
+
     public function __construct(){}
+
+    public function getAllStaff()
+    {
+        return DB_Connector::getInstance()->executeSimpleQuery(self::GET_ALL_STAFF);
+    }
 
     public function authenticateStaff($id, $password)
     {
@@ -36,9 +45,11 @@ class StaffDAO {
         return $row['manager'];
     }
 
-    public function createStaff($staffArray)
+    public function createStaff($name, $password, $manager)
     {
-
+        $result = DB_Connector::getInstance()->executePreparedQuery(self::CREATE_STAFF,
+                                               array($name, $password, $manager));
+        return $result;
     }
 
     public function getStaffById($id)

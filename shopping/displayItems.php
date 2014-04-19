@@ -57,7 +57,7 @@ function displayItems($PDOStatement, $returnURI, $USE_FLAG)
                     echo "<td><button class=updateInvButton type=button id=updateInvButton$itemId item=$itemId>Update Inventory</button></td>";
 
                 }else
-                    echo "<td style=text-align:center;>$quantity</td>";
+                    echo "<td>$quantity</td>";
                 if(isset($_SESSION['current_customer_email']) && $quantity > 0 && $USE_FLAG == ADD_TO_CART)
                     echo "<td><a class=\"addToCartLink\" href=\"#\" url=\"$addToCartStr\">Add to Cart</a></td>";
                 echo "</tr>";

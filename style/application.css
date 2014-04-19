@@ -160,7 +160,7 @@ hr
     color: mintcream;
 }
 
-#promoTable th
+#promoTable th, table.separated td, table.separated th
 {
     border-bottom: 2px solid mintcream;
 }

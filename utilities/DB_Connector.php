@@ -13,6 +13,9 @@ define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
 
 class DB_Connector {
 
+    /**
+     * @var PDO PDO
+     */
     private static $PDO;
     private static $db_database;
     private static $db_username;

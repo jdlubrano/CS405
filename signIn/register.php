@@ -15,6 +15,12 @@
         <?php
             include_once "../layout/navbar.php";
             include_once "../layout/sidebar.php";
+            if(isset($_SESSION['INVALID_CUSTOMER']))
+            {
+                $msg = $_SESSION['INVALID_CUSTOMER'];
+                echo "<div class=alert>$msg</div><br />";
+                unset($_SESSION['INVALID_CUSTOMER']);
+            }
         ?>
         <form method="post" action="createCustomer.php">
             <label for="name">Name: </label>

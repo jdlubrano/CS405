@@ -38,9 +38,9 @@
                                 <li><a href="salesStatistics.php">Sales Statistics</a></li>
                                 <li><a href="viewPromotionHistory.php">View Sales Promotions</a></li>
                                 <li><a href="startPromotion.php">Start a Sales Promotion</a></li>
-                                <li><a href="#">Add New Staff Member</a></li>
-                                <li><a href="#">Remove Items from Inventory</a></li>
-                                <li><a href="#">Add Items to Inventory</a></li>
+                                <li><a href="viewStaff.php">View Staff</a></li>
+                                <li><a href="addNewStaff.php">Add New Staff Member</a></li>
+                                <li><a href="addNewItem.php">Add Items to Inventory</a></li>
                             </ul>
                         </div>';
             }
