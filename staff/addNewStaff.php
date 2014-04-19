@@ -28,8 +28,8 @@ require_once "authenticateManager.php";
         ?>
         <h2>Add New Item to Inventory</h2>
         <form method="post" action="createStaff.php">
-            <label for="itemName">Name of Item: </label>
-            <input id="itemName" type="text" name="name" /><br/>
+            <label for="staffName">Name of Staff: </label>
+            <input id="staffName" type="text" name="name" /><br/>
             <label for="password">Password: </label>
             <input type="text" id="password" name="password" /><br/>
             <label for="manager">Manager: </label>
