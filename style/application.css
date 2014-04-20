@@ -2,7 +2,7 @@ body
 {
     font-size: 24px;
     color: mintcream;
-    padding-top: 150px;
+    padding-top: 175px;
     padding-left: 200px;
     padding-bottom: 100px;
     background: black;
@@ -40,6 +40,7 @@ body
     font-size: 36px;
     clear: both;
     background-size: 100%;
+    background: black;
 }
 
 .titleBanner a
