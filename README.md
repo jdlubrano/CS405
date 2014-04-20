@@ -88,7 +88,11 @@ Files
         * signInStaff.php - Authenticates staff credentials provided to signIn.php.
         * startPromotion.php - Displays form to create a new promotion.
         * stopPromotion.php - Sets end_date on a given promotion and resets item prices to pre-promotion levels.
-        *
+        * updateInventory.php - Displays a form for updating inventory quantities.
+        * updateItem.php - Changes the quantity of a given item via a SQL UPDATE.
+        * viewPendingOrders.php - Shows orders that have been placed but not yet shipped.
+        * viewPromotionHistory.php - Shows current and past promotions, allows managers to stop promotions.
+        * viewStaff.php - Shows all staff members with login credentials.
 
     * style
         * application.css - application scope stylesheet.
