@@ -23,6 +23,18 @@ $result = DB_Connector::getInstance()->executeSimpleQuery(GET_ORDER_ID);
 $row = $result->fetch();
 $orderId = $row['id'];
 
+const CHECK_EMPTY_CART = "SELECT COUNT(*) FROM Carts WHERE email = ?";
+
+$cntRes = DB_Connector::getInstance()->executePreparedQuery(CHECK_EMPTY_CART,
+                                       array($_SESSION['current_customer_email']));
+$cnt = $cntRes->fetchColumn(0);
+
+if($cnt < 1)
+{
+    header('HTTP/1.1 200 OK');
+    header("Location: viewCart.php");
+    die(0);
+}
 
 //add order_id to orders with status of 0
 const CREATE_NEW_ORDER = "INSERT INTO Orders VALUES (?, 0, NOW(), NULL)";
@@ -32,12 +44,6 @@ $result = DB_Connector::getInstance()->executePreparedQuery(CREATE_NEW_ORDER, ar
 const GET_ITEMS_FROM_CART_BY_EMAIL = "SELECT * FROM Carts WHERE email = ?";
 $result = DB_Connector::getInstance()->executePreparedQuery(GET_ITEMS_FROM_CART_BY_EMAIL,
                                                             array($_SESSION['current_customer_email']));
-if($result->rowCount() < 1)
-{
-    header('HTTP/1.1 200 OK');
-    header("Location: viewCart.php");
-    die(0);
-}
 
 //store Items with order_id in item_orders
 const INSERT_CART_ITEMS_INTO_ITEM_ORDERS = "INSERT INTO Item_orders(order_id, item_id) VALUES (?,?)";
