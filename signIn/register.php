@@ -31,8 +31,6 @@
             <input id="password" name="password" type="password"/><br />
             <label for="address">Address: </label>
             <input size="100" id="address" name="address" value="Address, City, State, Zip"/><br />
-            <label for="VIP">Are you a VIP?</label>
-            <input id="VIP" type="checkbox" value="1" name="VIP"><br />
             <button type="submit">Register</button>
         </form>
         <?php include_once "../layout/footer.php"; ?>
